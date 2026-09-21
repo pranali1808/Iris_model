@@ -3,7 +3,7 @@ import joblib
 import numpy as pd
 
 # load model
-model = joblib.load('iris_model_pkl')
+model = joblib.load('iris_model.pkl')
 
 #page title
 st.title('iris flower Prediction App')
