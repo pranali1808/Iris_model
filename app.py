@@ -2,7 +2,12 @@ import streamlit as st
 import numpy as np
 import pickle
 
-# Your inputs
+# Load the trained model
+with open("model.pkl", "rb") as file:
+    model = pickle.load(file)
+
+st.title("Iris Flower Prediction")
+
 sepal_length = st.number_input("Sepal Length")
 sepal_width = st.number_input("Sepal Width")
 petal_length = st.number_input("Petal Length")
@@ -15,4 +20,6 @@ input_data = np.array([[
     petal_width
 ]])
 
-prediction = model.predict(input_data)
+if st.button("Predict"):
+    prediction = model.predict(input_data)
+    st.write("Prediction:", prediction[0])
