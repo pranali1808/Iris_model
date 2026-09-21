@@ -3,7 +3,7 @@ import numpy as np
 import pickle
 
 # Load the trained model
-with open("model.pkl", "rb") as file:
+with open("iris_model.pkl", "rb") as file:
     model = pickle.load(file)
 
 st.title("Iris Flower Prediction")
